@@ -1,0 +1,9 @@
+name: sq-back-end
+labels:
+    app: sq-back-end
+command: bash
+sync:
+    - .:/home/app
+forward:
+    - 9239:9229
+    - 8880:80

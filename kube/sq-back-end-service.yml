@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: sq-back-end
+    namespace: default
+    labels:
+        app: sq-back-end
+spec:
+    type: ClusterIP
+    ports:
+        - port: 80
+          targetPort: 3000
+          name: http
+    selector:
+        app: sq-back-end

@@ -1,0 +1,16 @@
+version: "3.2"
+services:
+    sq-be:
+        image: "hudsonwilde/sq-back-end-dev"
+        stdin_open: true # docker run -i
+        tty: true        # docker run -t
+        ports:
+            - 3110:3000
+            - 9239:9229
+        build:
+            context: .
+            dockerfile: dev.Dockerfile
+        container_name: sq-be
+        volumes:
+            - ".:/home/app"
+        working_dir: /home/app

@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: sq-back-end
+    namespace: default
+    labels:
+        app: sq-back-end
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app: sq-back-end
+    template:
+        metadata:
+            labels:
+                app: sq-back-end
+        spec:
+            containers:
+                - name: sq-back-end
+                  image: hudsonwilde/sq-back-end:latest
+                  ports:
+                      - containerPort: 3000
